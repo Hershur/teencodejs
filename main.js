@@ -1,4 +1,4 @@
-console.log(`%c Firstname and Lastname of all workers: \n `,`font-weight: 700;`);
+	console.log(`%c 1. Firstname and Lastname of all workers: \n `,`font-weight: 700;`);
 
 	const nameOfWorkers = [
 
@@ -55,43 +55,36 @@ console.log(`%c Firstname and Lastname of all workers: \n `,`font-weight: 700;`)
 
 	];
 
-	for (let i = 0; i < nameOfWorkers.length; i++) {
-		console.log(`%c ${nameOfWorkers[i].firstname} ${nameOfWorkers[i].lastName}`, `color: #fff; background-color: #464646; padding: 4px`);
-	}
-	console.log(" ");
-	
-	
-
 	let totalSalary = 0;
-	for (let i = 0; i < nameOfWorkers.length; i++) {
-		
-		totalSalary += (nameOfWorkers[i].salary);
-		
-	}
-	console.log(`%c Total salary of all workers: ${totalSalary} \n`, `color: #fff; background-color: #480404; padding: 4px`);
-
-	
 	let ageSum = 0;
 	let n = nameOfWorkers.length;
-	for (var i = 0; i < nameOfWorkers.length; i++) {
-		ageSum += nameOfWorkers[i].age
+
+	for (let i in nameOfWorkers) {
+		totalSalary += (nameOfWorkers[i].salary);
+		ageSum += nameOfWorkers[i].age;
+
+		console.log(`%c ${nameOfWorkers[i].firstname} ${nameOfWorkers[i].lastName} \n`, `color: #fff; background-color: #464646; padding: 4px`);
 	}
 	averageAge = ageSum/n;
-	console.log(`%c Average age of all workers: ${averageAge} \n`, `color: #fff; background-color: #45260E; padding: 4px`);
 
+	console.log(`%c 2. Total salary of all workers: ${totalSalary} \n`, `color: #fff; background-color: #480404; padding: 4px`);
 
-	console.log(`%c ${JSON.stringify(nameOfWorkers[33])}`, `color: #fff; background-color: #903A01; padding: 4px`);
+	console.log(`%c 3. Average age of all workers: ${averageAge} \n`, `color: #fff; background-color: #45260E; padding: 4px`);
 
-	console.log(`%c The length of the array: ${n} \n`, `color: #fff; background-color: #623601; padding: 4px`);
+	console.log(`%c 4. ${JSON.stringify(nameOfWorkers[33])}`, `color: #fff; background-color: #903A01; padding: 4px`);
+
+	console.log(`%c 5. The length of the array: ${n} \n`, `color: #fff; background-color: #623601; padding: 4px`);
 
 	
 	let sofiaTurner = nameOfWorkers.find(item => item.firstname == "Sofia");
-	console.log(`%c Sofia Turner salary: ${sofiaTurner.salary} \n`, `color: #fff; background-color: #563C03; padding: 4px`);
+	console.log(`%c 6. Sofia Turner salary: ${sofiaTurner.salary} \n`, `color: #fff; background-color: #563C03; padding: 4px`);
 
 	let millerMurphy = nameOfWorkers.find(item => item.firstname == 'Miller');
 	millerMurphy.firstname = 'Milner';
 	let aldusAdams = nameOfWorkers.find(item => item.lastName == "Adams");
 	aldusAdams.gender = 'Female';
-	for (let i = 0; i < nameOfWorkers.length; i++) {
+	for (let i in nameOfWorkers) {
+
 		console.log(nameOfWorkers[i]);
 	}
+	
